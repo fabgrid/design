@@ -13,19 +13,18 @@
 
 conductor_thickness = .5;
 
-function conductor_width() = 4;
+function conductor_width(lalal) = 4;
 function conductor_height() = 12;
 
+/**
+ * Draw the cross section of a single conductor.
+ *
+ * @param {number} current The electrical current (currently ignored ;))
+ */
 module ConductorProfile(current)
 {
 	union() {
 		square([conductor_width(), conductor_thickness]);
 		square([conductor_thickness, conductor_height()]);
 	}
-}
-
-module Conductor(length)
-{
-	linear_extrude(length)
-	ConductorProfile();
 }

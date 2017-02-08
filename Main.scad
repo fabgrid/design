@@ -18,6 +18,7 @@
 |
 */
 use <Conductors/L-Conductor.scad>;
+use <WallMounts/LaserWallMount.scad>;
 
 
 /*
@@ -31,19 +32,9 @@ use <Conductors/L-Conductor.scad>;
 | anything here, unless you know what you're doing!
 |
 */
-include <Conductors/Common.scad>;
-
-
-/*
-|--------------------------------------------------------------------------
-| Configuration
-|--------------------------------------------------------------------------
-|
-| The following parameters can be changed to influence the model.
-|
-*/
-CONDUCTORS = [50, 100, 50, 50];
-CONDUCTORS_MARGIN = 10;
+include <Configuration.scad>;
+include <Conductors/Conductor.scad>;
+include <WallMounts/WallMount.scad>;
 
 
 /*
@@ -54,4 +45,7 @@ CONDUCTORS_MARGIN = 10;
 | Assemble the final design. This is where the actual model gets its shape.
 |
 */
-Conductors(1000, CONDUCTORS, CONDUCTORS_MARGIN);
+// Conductors(1000);
+WallMount(conductors_width(), conductors_height()) {
+	ConductorsProfile();
+}
