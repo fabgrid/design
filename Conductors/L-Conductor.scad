@@ -11,9 +11,9 @@
  *   - conductor_height() [Function] Returns the Y-spread of a single conductor
  */
 
-conductor_thickness = .5;
+THICKNESS = .5;
 
-function conductor_width(lalal) = 4;
+function conductor_width() = 4;
 function conductor_height() = 12;
 
 /**
@@ -24,7 +24,7 @@ function conductor_height() = 12;
 module ConductorProfile(current)
 {
 	union() {
-		square([conductor_width(), conductor_thickness]);
-		square([conductor_thickness, conductor_height()]);
+		square([conductor_width(), THICKNESS]);
+		square([THICKNESS, conductor_height()]);
 	}
 }

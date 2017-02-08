@@ -17,6 +17,7 @@
 | by stating a different file in the following lines.
 |
 */
+// use <Conductors/RoundConductor.scad>;
 use <Conductors/L-Conductor.scad>;
 use <WallMounts/LaserWallMount.scad>;
 
@@ -45,7 +46,7 @@ include <WallMounts/WallMount.scad>;
 | Assemble the final design. This is where the actual model gets its shape.
 |
 */
-// Conductors(1000);
+//ConductorProfile(50);
 WallMount(conductors_width(), conductors_height()) {
 	ConductorsProfile();
 }
